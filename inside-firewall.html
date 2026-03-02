@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Author: Andrew Jackson Darragh -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EncryptEd | Inside the Firewall</title>
+  <link rel="stylesheet" href="Styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true">E</span>
+        <span>EncryptEd</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="welcome-encrypted.html">Welcome</a>
+        <a href="inside-firewall.html" aria-current="page">Inside the Firewall</a>
+        <a href="helloworld.html">Hello, World!</a>
+        <a href="debugroom.html">Debug Room</a>
+        <a href="sign-in.html" class="nav-cta">Sign In</a>
+    </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <span class="badge">Defense • Networks</span>
+          <h1>Inside the Firewall</h1>
+          <p>
+            A firewall is a gatekeeper. It checks network traffic and applies rules to allow, deny,
+            or log connections based on security policy.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="sign-in.html">Secure Sign In</a>
+
+            <!-- INLINE CSS example (required CSS type) -->
+            <a class="btn" href="#lockdown"
+               style="border-color: rgba(251,113,133,.55); background: rgba(251,113,133,.12);">
+              Emergency Lockdown
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Key terms">
+          <h2 style="margin:0 0 10px; font-size:18px;">Key Terms</h2>
+          <ul class="clean-list">
+            <li><strong>Inbound</strong>: traffic entering your network.</li>
+            <li><strong>Outbound</strong>: traffic leaving your network.</li>
+            <li><strong>Ports</strong>: service “doors” (80/443 web, 22 SSH).</li>
+            <li><strong>Logging</strong>: recorded events for audit/response.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Rule types</h2>
+          <p>Specific rules first, broad rules last.</p>
+        </div>
+
+        <div class="grid cols-3">
+          <article class="card">
+            <h3>Allow</h3>
+            <p>Permit required traffic (example: HTTPS on port 443).</p>
+          </article>
+
+          <article class="card">
+            <h3>Deny</h3>
+            <p>Block risky or unnecessary traffic.</p>
+          </article>
+
+          <article class="card">
+            <h3>Log</h3>
+            <p>Record events for visibility and investigation.</p>
+          </article>
+        </div>
+
+        <hr class="hr">
+
+        <div class="grid cols-2">
+          <article class="card">
+            <h3>Mini checklist</h3>
+            <ul class="clean-list">
+              <li>Default deny (least privilege).</li>
+              <li>Only open the ports you need.</li>
+              <li>Log sign-ins and admin actions.</li>
+              <li>Review rules regularly.</li>
+            </ul>
+          </article>
+
+          <article class="card" id="lockdown">
+            <h3>Lockdown mode</h3>
+            <p>
+              During an incident, temporarily restrict inbound traffic to essentials only, then
+              restore services safely.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p style="margin:0;">EncryptEd draft UI • Inside the Firewall</p>
+    </div>
+  </footer>
+</body>
+</html>

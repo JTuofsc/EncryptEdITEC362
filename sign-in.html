@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Author: Andrew Jackson Darragh -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EncryptEd | Sign In</title>
+  <link rel="stylesheet" href="Styles.css">
+
+  <!-- Tiny internal CSS just for layout polish (optional, still validates) -->
+  <style>
+    .auth-shell{ max-width: 760px; margin: 0 auto; }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true">E</span>
+        <span>EncryptEd</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="welcome-encrypted.html">Welcome</a>
+        <a href="inside-firewall.html">Inside the Firewall</a>
+        <a href="helloworld.html">Hello, World!</a>
+        <a href="debugroom.html">Debug Room</a>
+        <a href="sign-in.html" aria-current="page">Sign In</a>
+    </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container auth-shell">
+        <div class="hero-card">
+          <span class="badge">Authentication</span>
+          <h1>Sign In</h1>
+          <p>
+            Draft sign-in page UI (no real login processing). Use this layout to match your Figma screen.
+          </p>
+
+          <section class="card" aria-labelledby="signin-title">
+            <h2 id="signin-title" style="margin:0 0 10px; font-size:18px;">Account access</h2>
+          
+            <form class="form" action="#" method="post">
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+          
+              <div class="field">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" required>
+              </div>
+          
+              <div class="field">
+                <label for="remember">
+                  <input id="remember" name="remember" type="checkbox" value="yes">
+                  Remember me
+                </label>
+              </div>
+          
+              <button class="btn primary" type="submit">Sign In</button>
+          
+              <p class="helper" style="margin:10px 0 0;">
+                Forgot your password? (UI placeholder)
+              </p>
+            </form>
+          </section>
+
+          <hr class="hr">
+
+          <p class="helper" style="margin:0;">
+            External CSS: css/styles.css • Internal CSS: welcome page • Inline CSS: firewall page button
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p style="margin:0;">EncryptEd draft UI • Sign In</p>
+    </div>
+  </footer>
+</body>
+</html>

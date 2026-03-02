@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Author: Andrew Jackson Darragh -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EncryptEd | Welcome</title>
+  <link rel="stylesheet" href="Styles.css">
+
+  <!-- INTERNAL CSS example (required CSS type) -->
+  <style>
+    .welcome-banner{
+      border: 1px solid rgba(109,124,255,.55);
+      background:
+        radial-gradient(700px 280px at 20% 20%, rgba(109,124,255,.22), transparent 65%),
+        radial-gradient(700px 280px at 80% 20%, rgba(160,123,255,.20), transparent 65%),
+        rgba(16,26,51,.55);
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true">E</span>
+        <span>EncryptEd</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="welcome-encrypted.html" aria-current="page">Welcome</a>
+        <a href="inside-firewall.html">Inside the Firewall</a>
+        <a href="helloworld.html">Hello, World!</a>
+        <a href="debugroom.html">Debug Room</a>
+        <a href="sign-in.html" class="nav-cta">Sign In</a>
+    </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card welcome-banner">
+          <span class="badge">Onboarding</span>
+          <h1>Welcome to EncryptEd</h1>
+          <p>
+            Start here to learn core security ideas and explore the draft pages. This UI will be
+            refined to match the Figma layout.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="inside-firewall.html">Firewall Basics</a>
+            <a class="btn" href="sign-in.html">Sign In</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="What you will learn">
+          <h2 style="margin:0 0 10px; font-size:18px;">What you’ll learn</h2>
+          <div class="grid">
+            <div class="card">
+              <h3>Encryption</h3>
+              <p>Protect data at rest and in transit.</p>
+            </div>
+            <div class="card">
+              <h3>Authentication</h3>
+              <p>Sign-in patterns and safer habits.</p>
+            </div>
+            <div class="card">
+              <h3>Defense</h3>
+              <p>Reduce risk with firewall rules and logging.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Get started in 3 steps</h2>
+          <p>Draft version — you’ll refine later.</p>
+        </div>
+
+        <div class="grid cols-3">
+          <article class="card">
+            <h3>1) Explore</h3>
+            <p>Read the Welcome page overview.</p>
+          </article>
+
+          <article class="card">
+            <h3>2) Learn</h3>
+            <p>Review Inside the Firewall concepts.</p>
+          </article>
+
+          <article class="card">
+            <h3>3) Validate</h3>
+            <p>Run HTML/CSS through W3C validators.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p style="margin:0;">EncryptEd draft UI • Welcome (internal CSS used)</p>
+    </div>
+  </footer>
+</body>
+</html>

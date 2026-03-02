@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello, World! | EncryptEd</title>
+  <link rel="stylesheet" href="Styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true">E</span>
+        <span>EncryptEd</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="welcome-encrypted.html">Welcome</a>
+        <a href="inside-firewall.html">Inside the Firewall</a>
+        <a href="helloworld.html" aria-current="page">Hello, World!</a>
+        <a href="debugroom.html">Debug Room</a>
+        <a href="sign-in.html" class="nav-cta">Sign In</a>
+    </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="page-head">
+          <h1 class="page-title">Hello, World!</h1>
+          <p class="lead">Exploring programming languages, tools, and the foundations of modern software development.</p>
+        </div>
+
+        <div class="grid cols-2">
+          <article class="card card--lang">
+            <h2>Python</h2>
+            <p>Versatile language known for readability and libraries.</p>
+            <p class="meta"><strong>Common uses:</strong> Web development, data science, automation</p>
+            <pre class="code"><code>def greet(name):
+    return f"Hello, {name}!"
+
+user_name = input("Enter your name: ")
+message = greet(user_name)
+
+print(message)</code></pre>
+          </article>
+
+          <article class="card card--lang">
+            <h2>JavaScript</h2>
+            <p>Language of the web, enabling interactive development.</p>
+            <p class="meta"><strong>Common uses:</strong> Front-end, back-end, mobile apps</p>
+            <pre class="code"><code>function greet() {
+  const name = document.getElementById("nameInput").value;
+  document.getElementById("output").textContent =
+    "Hello, " + name + "!";
+}</code></pre>
+          </article>
+
+          <article class="card card--lang">
+            <h2>Java</h2>
+            <p>Robust, object-oriented language used in many enterprise systems.</p>
+            <p class="meta"><strong>Common uses:</strong> Android apps, enterprise software, big data</p>
+            <pre class="code"><code>class Main {
+  public static void main(String[] args) {
+    String name = "World";
+    System.out.println("Hello, " + name + "!");
+  }
+}</code></pre>
+          </article>
+
+          <article class="card card--lang">
+            <h2>C++</h2>
+            <p>High-performance language for systems and game development.</p>
+            <p class="meta"><strong>Common uses:</strong> Games, operating systems, embedded systems</p>
+            <pre class="code"><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+std::string greet(std::string name) {
+  return "Hello, " + name + "!";
+}
+
+int main() {
+  std::cout &lt;&lt; greet("World");
+}</code></pre>
+          </article>
+
+          <article class="card card--lang">
+            <h2>HTML</h2>
+            <p>Standard markup language used to structure web pages.</p>
+            <p class="meta"><strong>Common uses:</strong> Website structure, content, forms</p>
+            <pre class="code"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;input type="text" placeholder="Enter your name"&gt;
+    &lt;button&gt;Submit&lt;/button&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </article>
+
+          <article class="card card--lang">
+            <h2>SQL</h2>
+            <p>Database language used to query and manage structured data.</p>
+            <p class="meta"><strong>Common uses:</strong> Data retrieval, DB management, backend systems</p>
+            <pre class="code"><code>SELECT first_name, last_name
+FROM users
+WHERE active = 1
+ORDER BY last_name;</code></pre>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p style="margin:0;">EncryptEd draft UI • Hello, World!</p>
+    </div>
+  </footer>
+</body>
+</html>
