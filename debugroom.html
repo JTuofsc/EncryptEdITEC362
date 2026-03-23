@@ -18,7 +18,16 @@
         <span>EncryptEd</span>
       </a>
 
-      <nav class="nav" aria-label="Primary navigation">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+        aria-label="Open menu">
+        ☰
+      </button>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="welcome-encrypted.html">Welcome</a>
         <a href="inside-firewall.html">Inside the Firewall</a>
@@ -127,5 +136,19 @@
       <p class="footer-text">EncryptEd draft UI • Debug Room</p>
     </div>
   </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("#primary-nav");
+
+    if (menuToggle && nav) {
+      menuToggle.addEventListener("click", function () {
+        const isOpen = nav.classList.toggle("nav-open");
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+        menuToggle.textContent = isOpen ? "✕" : "☰";
+      });
+    }
+  </script>
 </body>
 </html>

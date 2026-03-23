@@ -18,7 +18,16 @@
         <span>EncryptEd</span>
       </a>
 
-      <nav class="nav" aria-label="Primary navigation">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+        aria-label="Open menu">
+        ☰
+      </button>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="welcome-encrypted.html">Welcome</a>
         <a href="inside-firewall.html">Inside the Firewall</a>
@@ -32,8 +41,6 @@
   <main id="main">
     <section class="section">
       <div class="container">
-
-        <!-- Page Header -->
         <div class="page-head">
           <h1 class="page-title">Hello, World!</h1>
           <p class="lead">
@@ -41,9 +48,7 @@
           </p>
         </div>
 
-        <!-- Language Cards -->
         <div class="grid cols-2 lang-grid">
-
           <article class="card card--lang">
             <h2>Python</h2>
             <p>Versatile language known for readability and libraries.</p>
@@ -119,7 +124,6 @@ FROM users
 WHERE active = 1
 ORDER BY last_name;</code></pre>
           </article>
-
         </div>
       </div>
     </section>
@@ -130,5 +134,19 @@ ORDER BY last_name;</code></pre>
       <p class="footer-text">EncryptEd draft UI • Hello, World!</p>
     </div>
   </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("#primary-nav");
+
+    if (menuToggle && nav) {
+      menuToggle.addEventListener("click", function () {
+        const isOpen = nav.classList.toggle("nav-open");
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+        menuToggle.textContent = isOpen ? "✕" : "☰";
+      });
+    }
+  </script>
 </body>
 </html>
