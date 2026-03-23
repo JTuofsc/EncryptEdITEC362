@@ -25,7 +25,7 @@
         <a href="helloworld.html">Hello, World!</a>
         <a href="debugroom.html" aria-current="page">Debug Room</a>
         <a href="sign-in.html" class="nav-cta">Sign In</a>
-    </nav>
+      </nav>
     </div>
   </header>
 
@@ -38,20 +38,20 @@
           <p>Ask questions, solve problems, and learn together.</p>
 
           <div class="hero-actions">
-            <a class="btn primary" href="#" style="border-radius:14px;">Start a Discussion</a>
-            <a class="btn" href="#" style="border-radius:14px;">Login to Post</a>
+            <a class="btn primary" href="#">Start a Discussion</a>
+            <a class="btn" href="#">Login to Post</a>
           </div>
         </div>
 
         <aside class="hero-card" aria-label="Quick tips">
-          <h2 style="margin:0 0 10px; font-size:18px;">How it works</h2>
+          <h2 class="aside-title">How it works</h2>
           <ul class="clean-list">
             <li>Pick a category.</li>
             <li>Search recent posts.</li>
             <li>Start a new discussion if needed.</li>
           </ul>
           <hr class="hr">
-          <p style="margin:0; color:var(--muted); font-size:14px;">
+          <p class="aside-note">
             Keep posts clear and include screenshots/code when helpful.
           </p>
         </aside>
@@ -66,11 +66,11 @@
         </div>
 
         <div class="grid cols-3">
-          <a class="card cat" href="#" style="background-image:url('images/cybersecurity.jpg');">
+          <a class="card cat cat--cybersecurity" href="#">
             <span class="cat__label">Cybersecurity</span>
           </a>
 
-          <a class="card cat" href="#" style="background-image:url('images/coding.jpg');">
+          <a class="card cat cat--coding" href="#">
             <span class="cat__label">Coding</span>
           </a>
 
@@ -88,7 +88,7 @@
           <p>Latest questions from the community.</p>
         </div>
 
-        <div class="grid">
+        <div class="grid post-grid">
           <article class="card post">
             <h3>Post Title</h3>
             <p class="post__meta">Author Name • Date</p>
@@ -116,7 +116,7 @@
         </div>
 
         <div class="center-actions">
-          <a class="btn primary" href="#" style="border-radius:14px;">Login to Post</a>
+          <a class="btn primary" href="#">Login to Post</a>
         </div>
       </div>
     </section>
@@ -124,7 +124,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p style="margin:0;">EncryptEd draft UI • Debug Room</p>
+      <p class="footer-text">EncryptEd draft UI • Debug Room</p>
     </div>
   </footer>
 </body>
