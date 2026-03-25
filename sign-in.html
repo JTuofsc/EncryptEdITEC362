@@ -5,9 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EncryptEd | Sign In</title>
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Tiny internal CSS just for layout polish (optional, still validates) -->
+  <link rel="stylesheet" href="styles.css?v=2">
   <style>
     .auth-shell{ max-width: 760px; margin: 0 auto; }
   </style>
@@ -23,14 +21,23 @@
         <span>EncryptEd</span>
       </a>
 
-      <nav class="nav" aria-label="Primary navigation">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+        aria-label="Open menu">
+        ☰
+      </button>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="welcome-encrypted.html">Welcome</a>
         <a href="inside-firewall.html">Inside the Firewall</a>
         <a href="helloworld.html">Hello, World!</a>
         <a href="debugroom.html">Debug Room</a>
         <a href="sign-in.html" aria-current="page" class="nav-cta">Sign In</a>
-    </nav>
+      </nav>
     </div>
   </header>
 
@@ -41,33 +48,34 @@
           <span class="badge">Authentication</span>
           <h1>Sign In</h1>
           <p>
-            Draft sign-in page UI (no real login processing). Use this layout to match your Figma screen.
+            Draft sign-in page UI. This page currently demonstrates layout only and does not create
+            real accounts or process real logins.
           </p>
 
           <section class="card" aria-labelledby="signin-title">
-            <h2 id="signin-title" style="margin:0 0 10px; font-size:18px;">Account access</h2>
-          
+            <h2 id="signin-title" class="aside-title">Account access</h2>
+
             <form class="form" action="#" method="post">
               <div class="field">
                 <label for="email">Email</label>
                 <input id="email" name="email" type="email" autocomplete="email" required>
               </div>
-          
+
               <div class="field">
                 <label for="password">Password</label>
                 <input id="password" name="password" type="password" autocomplete="current-password" required>
               </div>
-          
+
               <div class="field">
                 <label for="remember">
                   <input id="remember" name="remember" type="checkbox" value="yes">
                   Remember me
                 </label>
               </div>
-          
+
               <button class="btn primary" type="submit">Sign In</button>
-          
-              <p class="helper" style="margin:10px 0 0;">
+
+              <p class="aside-note" style="margin-top:10px;">
                 Forgot your password? (UI placeholder)
               </p>
             </form>
@@ -75,8 +83,8 @@
 
           <hr class="hr">
 
-          <p class="helper" style="margin:0;">
-            External CSS: css/styles.css • Internal CSS: welcome page • Inline CSS: firewall page button
+          <p class="aside-note">
+            To make this page support real accounts, connect it to an authentication service and database.
           </p>
         </div>
       </div>
@@ -85,8 +93,24 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p style="margin:0;">EncryptEd draft UI • Sign In</p>
+      <p class="footer-text">EncryptEd draft UI • Sign In</p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("#primary-nav");
+
+      if (menuToggle && nav) {
+        menuToggle.addEventListener("click", function () {
+          const isOpen = nav.classList.toggle("nav-open");
+          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+          menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
+      }
+    });
+  </script>
 </body>
 </html>

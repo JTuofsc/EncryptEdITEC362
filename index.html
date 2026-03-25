@@ -5,11 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EncryptEd | Home</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">
@@ -17,14 +18,23 @@
         <span>EncryptEd</span>
       </a>
 
-      <nav class="nav" aria-label="Primary navigation">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+        aria-label="Open menu">
+        ☰
+      </button>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary navigation">
         <a href="index.html" aria-current="page">Home</a>
         <a href="welcome-encrypted.html">Welcome</a>
         <a href="inside-firewall.html">Inside the Firewall</a>
         <a href="helloworld.html">Hello, World!</a>
         <a href="debugroom.html">Debug Room</a>
         <a href="sign-in.html" class="nav-cta">Sign In</a>
-    </nav>
+      </nav>
     </div>
   </header>
 
@@ -46,7 +56,7 @@
         </div>
 
         <aside class="hero-card" aria-label="Quick overview">
-          <h2 style="margin:0 0 10px; font-size:18px;">What’s inside</h2>
+          <h2 class="aside-title">What’s inside</h2>
           <div class="grid">
             <div class="card">
               <h3>Welcome</h3>
@@ -72,18 +82,25 @@
           <article class="card">
             <h3>Welcome to EncryptEd</h3>
             <p>Onboarding content.</p>
-            <p style="margin-top:10px;"><a class="btn" href="welcome-encrypted.html">Open</a></p>
+            <div class="center-actions">
+              <a class="btn" href="welcome-encrypted.html">Open</a>
+            </div>
           </article>
 
           <article class="card">
             <h3>Inside the Firewall</h3>
             <p>Defense concepts and mini checklist.</p>
-            <p style="margin-top:10px;"><a class="btn" href="inside-firewall.html">Open</a></p>
+            <div class="center-actions">
+              <a class="btn" href="inside-firewall.html">Open</a>
+            </div>
           </article>
 
           <article class="card">
-            <h3>CSS Requirements</h3>
-            <p>External + Internal + Inline will be demonstrated.</p>
+            <h3>Hello, World!</h3>
+            <p>Programming languages, examples, and development basics.</p>
+            <div class="center-actions">
+              <a class="btn" href="helloworld.html">Open</a>
+            </div>
           </article>
         </div>
       </div>
@@ -92,8 +109,24 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p style="margin:0;">EncryptEd draft UI • Home</p>
+      <p class="footer-text">EncryptEd draft UI • Home</p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("#primary-nav");
+
+      if (menuToggle && nav) {
+        menuToggle.addEventListener("click", function () {
+          const isOpen = nav.classList.toggle("nav-open");
+          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+          menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
+      }
+    });
+  </script>
 </body>
 </html>

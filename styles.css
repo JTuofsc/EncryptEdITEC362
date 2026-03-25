@@ -557,3 +557,49 @@ img{
     padding:24px;
   }
 }
+
+.form{
+  display:grid;
+  gap:14px;
+}
+
+.field{
+  display:grid;
+  gap:8px;
+}
+
+.field label{
+  font-weight:600;
+  color:var(--text);
+}
+
+.field input[type="email"],
+.field input[type="password"],
+.field input[type="text"]{
+  width:100%;
+  min-height:44px;
+  padding:12px 14px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:rgba(255,255,255,.05);
+  color:var(--text);
+  font:inherit;
+}
+
+.field input::placeholder{
+  color:var(--muted);
+}
+
+.field input:focus{
+  outline:none;
+  border-color:rgba(109,124,255,.7);
+  box-shadow:0 0 0 3px rgba(109,124,255,.18);
+}
+
+.field input[type="checkbox"]{
+  margin-right:8px;
+}
+
+.auth-shell{
+  max-width:760px;
+}

@@ -5,9 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EncryptEd | Welcome</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
 
-  <!-- INTERNAL CSS example (required CSS type) -->
   <style>
     .welcome-banner{
       border: 1px solid rgba(109,124,255,.55);
@@ -29,14 +28,23 @@
         <span>EncryptEd</span>
       </a>
 
-      <nav class="nav" aria-label="Primary navigation">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+        aria-label="Open menu">
+        ☰
+      </button>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="welcome-encrypted.html" aria-current="page">Welcome</a>
         <a href="inside-firewall.html">Inside the Firewall</a>
         <a href="helloworld.html">Hello, World!</a>
         <a href="debugroom.html">Debug Room</a>
         <a href="sign-in.html" class="nav-cta">Sign In</a>
-    </nav>
+      </nav>
     </div>
   </header>
 
@@ -58,7 +66,7 @@
         </div>
 
         <aside class="hero-card" aria-label="What you will learn">
-          <h2 style="margin:0 0 10px; font-size:18px;">What you’ll learn</h2>
+          <h2 class="aside-title">What you’ll learn</h2>
           <div class="grid">
             <div class="card">
               <h3>Encryption</h3>
@@ -106,8 +114,24 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p style="margin:0;">EncryptEd draft UI • Welcome (internal CSS used)</p>
+      <p class="footer-text">EncryptEd draft UI • Welcome</p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("#primary-nav");
+
+      if (menuToggle && nav) {
+        menuToggle.addEventListener("click", function () {
+          const isOpen = nav.classList.toggle("nav-open");
+          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+          menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
+      }
+    });
+  </script>
 </body>
 </html>

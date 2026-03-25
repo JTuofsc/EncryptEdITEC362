@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Debug Room | EncryptEd</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 
 <body>
@@ -42,26 +42,29 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-card">
-          <span class="badge">Community</span>
+          <span class="badge">Community • Draft</span>
           <h1>Debug Room</h1>
-          <p>Ask questions, solve problems, and learn together.</p>
+          <p>
+            Ask questions, solve problems, and learn together. This is a draft forum layout for
+            EncryptEd and currently shows sample categories and example posts.
+          </p>
 
           <div class="hero-actions">
-            <a class="btn primary" href="#">Start a Discussion</a>
-            <a class="btn" href="#">Login to Post</a>
+            <a class="btn primary" href="sign-in.html">Start a Discussion</a>
+            <a class="btn" href="sign-in.html">Login to Post</a>
           </div>
         </div>
 
         <aside class="hero-card" aria-label="Quick tips">
           <h2 class="aside-title">How it works</h2>
           <ul class="clean-list">
-            <li>Pick a category.</li>
-            <li>Search recent posts.</li>
-            <li>Start a new discussion if needed.</li>
+            <li>Choose a topic category.</li>
+            <li>Browse recent discussions.</li>
+            <li>Sign in to create a post or reply.</li>
           </ul>
           <hr class="hr">
           <p class="aside-note">
-            Keep posts clear and include screenshots/code when helpful.
+            Draft version: posts below are examples used to demonstrate the forum layout.
           </p>
         </aside>
       </div>
@@ -75,15 +78,15 @@
         </div>
 
         <div class="grid cols-3">
-          <a class="card cat cat--cybersecurity" href="#">
+          <a class="card cat cat--cybersecurity" href="sign-in.html">
             <span class="cat__label">Cybersecurity</span>
           </a>
 
-          <a class="card cat cat--coding" href="#">
+          <a class="card cat cat--coding" href="sign-in.html">
             <span class="cat__label">Coding</span>
           </a>
 
-          <a class="card cat cat--plain" href="#">
+          <a class="card cat cat--plain" href="sign-in.html">
             <span class="cat__label">General IT</span>
           </a>
         </div>
@@ -94,38 +97,43 @@
       <div class="container">
         <div class="section-title">
           <h2>Recent Posts</h2>
-          <p>Latest questions from the community.</p>
+          <p>Sample questions from the community draft.</p>
         </div>
 
         <div class="grid post-grid">
           <article class="card post">
-            <h3>Post Title</h3>
-            <p class="post__meta">Author Name • Date</p>
+            <h3>How do firewalls decide what traffic to block?</h3>
+            <p class="post__meta">Alex M. • March 20, 2026</p>
           </article>
 
           <article class="card post">
-            <h3>Post Title</h3>
-            <p class="post__meta">Author Name • Date</p>
+            <h3>Why does my HTML page look different on mobile?</h3>
+            <p class="post__meta">Jordan T. • March 19, 2026</p>
           </article>
 
           <article class="card post">
-            <h3>Post Title</h3>
-            <p class="post__meta">Author Name • Date</p>
+            <h3>What’s the difference between authentication and authorization?</h3>
+            <p class="post__meta">Sam R. • March 18, 2026</p>
           </article>
 
           <article class="card post">
-            <h3>Post Title</h3>
-            <p class="post__meta">Author Name • Date</p>
+            <h3>How do I center a div with CSS?</h3>
+            <p class="post__meta">Taylor P. • March 17, 2026</p>
           </article>
 
           <article class="card post">
-            <h3>Post Title</h3>
-            <p class="post__meta">Author Name • Date</p>
+            <h3>What makes a password strong enough?</h3>
+            <p class="post__meta">Chris L. • March 16, 2026</p>
+          </article>
+
+          <article class="card post">
+            <h3>When should I use Python instead of JavaScript?</h3>
+            <p class="post__meta">Morgan K. • March 15, 2026</p>
           </article>
         </div>
 
         <div class="center-actions">
-          <a class="btn primary" href="#">Login to Post</a>
+          <a class="btn primary" href="sign-in.html">Login to Post</a>
         </div>
       </div>
     </section>
@@ -138,17 +146,19 @@
   </footer>
 
   <script>
-    const menuToggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector("#primary-nav");
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("#primary-nav");
 
-    if (menuToggle && nav) {
-      menuToggle.addEventListener("click", function () {
-        const isOpen = nav.classList.toggle("nav-open");
-        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-        menuToggle.textContent = isOpen ? "✕" : "☰";
-      });
-    }
+      if (menuToggle && nav) {
+        menuToggle.addEventListener("click", function () {
+          const isOpen = nav.classList.toggle("nav-open");
+          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+          menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
+      }
+    });
   </script>
 </body>
 </html>
