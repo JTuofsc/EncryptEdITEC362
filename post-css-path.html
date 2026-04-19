@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Author: Japheth Troche -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Debug Room | CSS File Path</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true">E</span>
+        <span class="brand-text">EncryptEd</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="welcome-encrypted.html">Welcome</a>
+        <a href="inside-firewall.html">Inside the Firewall</a>
+        <a href="helloworld.html">Hello, World!</a>
+        <a href="debugroom.html" aria-current="page">Debug Room</a>
+        <a href="sign-in.html" class="nav-cta">Sign In</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container discussion-wrap">
+      <a class="back-link" href="debugroom.html">← Back to Debug Room</a>
+
+      <section class="hero-card discussion-main">
+        <span class="badge">Coding Help</span>
+        <h1>How can I tell if my CSS file path is wrong?</h1>
+        <p class="post__meta">Posted by Alex • April 2026</p>
+        <p>
+          I linked my stylesheet in the head of my HTML file, but none of my styles are showing up.
+          The page loads, but it looks like plain HTML. How can I check if the CSS path is wrong?
+        </p>
+      </section>
+
+      <section class="reply-box">
+        <h2>Reply</h2>
+        <p class="helper">This discussion page is a mockup, so replies are read-only.</p>
+        <textarea readonly placeholder="Replying is disabled on this example page."></textarea>
+      </section>
+
+      <section class="grid">
+        <article class="reply-card">
+          <p class="reply-meta">Jordan • 6 likes</p>
+          <p>Open your browser inspector and check the Console or Network tab. If the CSS file is not found, it usually shows a 404 error.</p>
+          <p class="reply-actions">Helpful • Liked by 6 users</p>
+        </article>
+
+        <article class="reply-card">
+          <p class="reply-meta">Casey • 4 likes</p>
+          <p>Make sure the filename matches exactly. Even something small like <strong>Styles.css</strong> vs <strong>styles.css</strong> can break it.</p>
+          <p class="reply-actions">Helpful • Liked by 4 users</p>
+        </article>
+
+        <article class="reply-card">
+          <p class="reply-meta">Riley • 2 likes</p>
+          <p>If your CSS file is in another folder, the path has to match that folder too, like <strong>css/styles.css</strong> or <strong>../styles.css</strong>.</p>
+          <p class="reply-actions">Helpful • Liked by 2 users</p>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>EncryptEd draft UI • Discussion Page</p>
+    </div>
+  </footer>
+</body>
+</html>

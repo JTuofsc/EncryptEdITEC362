@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Author: Japheth Troche -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Debug Room | Image Not Loading</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true">E</span>
+        <span class="brand-text">EncryptEd</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="welcome-encrypted.html">Welcome</a>
+        <a href="inside-firewall.html">Inside the Firewall</a>
+        <a href="helloworld.html">Hello, World!</a>
+        <a href="debugroom.html" aria-current="page">Debug Room</a>
+        <a href="sign-in.html" class="nav-cta">Sign In</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container discussion-wrap">
+      <a class="back-link" href="debugroom.html">← Back to Debug Room</a>
+
+      <section class="hero-card discussion-main">
+        <span class="badge">General IT</span>
+        <h1>Why is my image not loading in HTML?</h1>
+        <p class="post__meta">Posted by Taylor • April 2026</p>
+        <p>
+          I added an image using the img tag, but it just shows a broken image icon.
+          I think the file is in my project, but it still does not appear on the page.
+        </p>
+      </section>
+
+      <section class="reply-box">
+        <h2>Reply</h2>
+        <p class="helper">This discussion page is a mockup, so replies are read-only.</p>
+        <textarea readonly placeholder="Replying is disabled on this example page."></textarea>
+      </section>
+
+      <section class="grid">
+        <article class="reply-card">
+          <p class="reply-meta">Jordan • 7 likes</p>
+          <p>The most common issue is the file path. Double-check whether the image is in the same folder or inside something like an <strong>images</strong> folder.</p>
+          <p class="reply-actions">Helpful • Liked by 7 users</p>
+        </article>
+
+        <article class="reply-card">
+          <p class="reply-meta">Riley • 4 likes</p>
+          <p>Make sure the extension is correct too. A file named <strong>photo.JPG</strong> is not the same as <strong>photo.jpg</strong> on some systems.</p>
+          <p class="reply-actions">Helpful • Liked by 4 users</p>
+        </article>
+
+        <article class="reply-card">
+          <p class="reply-meta">Casey • 1 like</p>
+          <p>Try opening the image directly in the browser from its file location. If it does not open there, the file itself may be missing or corrupted.</p>
+          <p class="reply-actions">Helpful • Liked by 1 user</p>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>EncryptEd draft UI • Discussion Page</p>
+    </div>
+  </footer>
+</body>
+</html>

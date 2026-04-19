@@ -1,13 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Author: Andrew Jackson Darragh -->
+  <!-- Author: Andrew Jackson Darragh and Japheth Troche-Colon -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EncryptEd | Home</title>
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -15,19 +14,10 @@
     <div class="container header-inner">
       <a class="brand" href="index.html">
         <span class="brand-badge" aria-hidden="true">E</span>
-        <span>EncryptEd</span>
+        <span class="brand-text">EncryptEd</span>
       </a>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="primary-nav"
-        aria-label="Open menu">
-        ☰
-      </button>
-
-      <nav class="nav" id="primary-nav" aria-label="Primary navigation">
+      <nav class="nav" aria-label="Primary navigation">
         <a href="index.html" aria-current="page">Home</a>
         <a href="welcome-encrypted.html">Welcome</a>
         <a href="inside-firewall.html">Inside the Firewall</a>
@@ -45,26 +35,31 @@
           <span class="badge">Draft UI</span>
           <h1>EncryptEd</h1>
           <p>
-            Learn cybersecurity concepts through a clean UI draft. This is a work in progress
-            and will be refined to match the Figma design.
+            Learn cybersecurity concepts through a modern, multi-page website.
+            Explore lessons, examples, and a community page with one shared stylesheet.
           </p>
 
           <div class="hero-actions">
             <a class="btn primary" href="welcome-encrypted.html">Start Here</a>
-            <a class="btn" href="inside-firewall.html">Inside the Firewall</a>
+            <a class="btn" href="inside-firewall.html">Explore Firewall</a>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Quick overview">
-          <h2 class="aside-title">What’s inside</h2>
+        <aside class="hero-card" aria-label="Website overview">
+          <span class="badge">Overview</span>
+          <h2>What’s inside?</h2>
           <div class="grid">
             <div class="card">
-              <h3>Welcome</h3>
-              <p>Intro page and learning path.</p>
+              <h3>Welcome Page</h3>
+              <p>Introduction and learning path for new users.</p>
             </div>
             <div class="card">
-              <h3>Firewall</h3>
-              <p>Network defense and rules overview.</p>
+              <h3>Learning Pages</h3>
+              <p>Cybersecurity topics, programming basics, and examples.</p>
+            </div>
+            <div class="card">
+              <h3>Sign In UI</h3>
+              <p>A styled authentication screen inspired by the tutorial layout.</p>
             </div>
           </div>
         </aside>
@@ -74,31 +69,31 @@
     <section class="section">
       <div class="container">
         <div class="section-title">
-          <h2>Pages</h2>
-          <p>Use these links to navigate.</p>
+          <h2>Site Pages</h2>
+          <p>Navigate through each section of the project.</p>
         </div>
 
         <div class="grid cols-3">
           <article class="card">
             <h3>Welcome to EncryptEd</h3>
-            <p>Onboarding content.</p>
-            <div class="center-actions">
+            <p>Onboarding, overview, and first steps.</p>
+            <div class="hero-actions">
               <a class="btn" href="welcome-encrypted.html">Open</a>
             </div>
           </article>
 
           <article class="card">
             <h3>Inside the Firewall</h3>
-            <p>Defense concepts and mini checklist.</p>
-            <div class="center-actions">
+            <p>Security basics, rules, and protective strategies.</p>
+            <div class="hero-actions">
               <a class="btn" href="inside-firewall.html">Open</a>
             </div>
           </article>
 
           <article class="card">
             <h3>Hello, World!</h3>
-            <p>Programming languages, examples, and development basics.</p>
-            <div class="center-actions">
+            <p>Programming language examples and starter code blocks.</p>
+            <div class="hero-actions">
               <a class="btn" href="helloworld.html">Open</a>
             </div>
           </article>
@@ -109,24 +104,8 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p class="footer-text">EncryptEd draft UI • Home</p>
+      <p>EncryptEd draft UI • Home</p>
     </div>
   </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuToggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector("#primary-nav");
-
-      if (menuToggle && nav) {
-        menuToggle.addEventListener("click", function () {
-          const isOpen = nav.classList.toggle("nav-open");
-          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-          menuToggle.textContent = isOpen ? "✕" : "☰";
-        });
-      }
-    });
-  </script>
 </body>
 </html>

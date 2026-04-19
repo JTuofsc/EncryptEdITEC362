@@ -7,7 +7,6 @@
   <title>Hello, World! | EncryptEd</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -15,19 +14,10 @@
     <div class="container header-inner">
       <a class="brand" href="index.html">
         <span class="brand-badge" aria-hidden="true">E</span>
-        <span>EncryptEd</span>
+        <span class="brand-text">EncryptEd</span>
       </a>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="primary-nav"
-        aria-label="Open menu">
-        ☰
-      </button>
-
-      <nav class="nav" id="primary-nav" aria-label="Primary navigation">
+      <nav class="nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="welcome-encrypted.html">Welcome</a>
         <a href="inside-firewall.html">Inside the Firewall</a>
@@ -39,33 +29,30 @@
   </header>
 
   <main id="main">
-    <section class="section">
+    <section class="page-section">
       <div class="container">
         <div class="page-head">
           <h1 class="page-title">Hello, World!</h1>
           <p class="lead">
-            Exploring programming languages, tools, and the foundations of modern software development.
+            Explore beginner-friendly programming examples across common languages
+            used in web development, scripting, software engineering, and databases.
           </p>
         </div>
 
-        <div class="grid cols-2 lang-grid">
-          <article class="card card--lang">
+        <div class="grid cols-2">
+          <article class="card">
             <h2>Python</h2>
-            <p>Versatile language known for readability and libraries.</p>
-            <p class="meta"><strong>Common uses:</strong> Web development, data science, automation</p>
+            <p class="meta"><strong>Common uses:</strong> Automation, scripting, web apps, data science</p>
             <pre class="code"><code>def greet(name):
     return f"Hello, {name}!"
 
 user_name = input("Enter your name: ")
-message = greet(user_name)
-
-print(message)</code></pre>
+print(greet(user_name))</code></pre>
           </article>
 
-          <article class="card card--lang">
+          <article class="card">
             <h2>JavaScript</h2>
-            <p>Language of the web, enabling interactive development.</p>
-            <p class="meta"><strong>Common uses:</strong> Front-end, back-end, mobile apps</p>
+            <p class="meta"><strong>Common uses:</strong> Front-end, back-end, interactivity</p>
             <pre class="code"><code>function greet() {
   const name = document.getElementById("nameInput").value;
   document.getElementById("output").textContent =
@@ -73,10 +60,9 @@ print(message)</code></pre>
 }</code></pre>
           </article>
 
-          <article class="card card--lang">
+          <article class="card">
             <h2>Java</h2>
-            <p>Robust, object-oriented language used in many enterprise systems.</p>
-            <p class="meta"><strong>Common uses:</strong> Android apps, enterprise software, big data</p>
+            <p class="meta"><strong>Common uses:</strong> Enterprise apps, Android, backend systems</p>
             <pre class="code"><code>class Main {
   public static void main(String[] args) {
     String name = "World";
@@ -85,40 +71,32 @@ print(message)</code></pre>
 }</code></pre>
           </article>
 
-          <article class="card card--lang">
+          <article class="card">
             <h2>C++</h2>
-            <p>High-performance language for systems and game development.</p>
-            <p class="meta"><strong>Common uses:</strong> Games, operating systems, embedded systems</p>
+            <p class="meta"><strong>Common uses:</strong> Games, systems programming, performance-heavy apps</p>
             <pre class="code"><code>#include &lt;iostream&gt;
 #include &lt;string&gt;
 
-std::string greet(std::string name) {
-  return "Hello, " + name + "!";
-}
-
 int main() {
-  std::cout &lt;&lt; greet("World");
+  std::string name = "World";
+  std::cout &lt;&lt; "Hello, " &lt;&lt; name &lt;&lt; "!";
 }</code></pre>
           </article>
 
-          <article class="card card--lang">
+          <article class="card">
             <h2>HTML</h2>
-            <p>Standard markup language used to structure web pages.</p>
-            <p class="meta"><strong>Common uses:</strong> Website structure, content, forms</p>
+            <p class="meta"><strong>Common uses:</strong> Page structure and content</p>
             <pre class="code"><code>&lt;!doctype html&gt;
 &lt;html&gt;
   &lt;body&gt;
     &lt;h1&gt;Hello, World!&lt;/h1&gt;
-    &lt;input type="text" placeholder="Enter your name"&gt;
-    &lt;button&gt;Submit&lt;/button&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
           </article>
 
-          <article class="card card--lang">
+          <article class="card">
             <h2>SQL</h2>
-            <p>Database language used to query and manage structured data.</p>
-            <p class="meta"><strong>Common uses:</strong> Data retrieval, DB management, backend systems</p>
+            <p class="meta"><strong>Common uses:</strong> Querying and managing databases</p>
             <pre class="code"><code>SELECT first_name, last_name
 FROM users
 WHERE active = 1
@@ -131,22 +109,8 @@ ORDER BY last_name;</code></pre>
 
   <footer class="site-footer">
     <div class="container">
-      <p class="footer-text">EncryptEd draft UI • Hello, World!</p>
+      <p>EncryptEd draft UI • Hello, World!</p>
     </div>
   </footer>
-
-  <script>
-    const menuToggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector("#primary-nav");
-
-    if (menuToggle && nav) {
-      menuToggle.addEventListener("click", function () {
-        const isOpen = nav.classList.toggle("nav-open");
-        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-        menuToggle.textContent = isOpen ? "✕" : "☰";
-      });
-    }
-  </script>
 </body>
 </html>

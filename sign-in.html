@@ -5,12 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EncryptEd | Sign In</title>
-  <link rel="stylesheet" href="styles.css?v=2">
-  <style>
-    .auth-shell{ max-width: 760px; margin: 0 auto; }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -18,19 +14,10 @@
     <div class="container header-inner">
       <a class="brand" href="index.html">
         <span class="brand-badge" aria-hidden="true">E</span>
-        <span>EncryptEd</span>
+        <span class="brand-text">EncryptEd</span>
       </a>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="primary-nav"
-        aria-label="Open menu">
-        ☰
-      </button>
-
-      <nav class="nav" id="primary-nav" aria-label="Primary navigation">
+      <nav class="nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="welcome-encrypted.html">Welcome</a>
         <a href="inside-firewall.html">Inside the Firewall</a>
@@ -42,75 +29,41 @@
   </header>
 
   <main id="main">
-    <section class="hero">
-      <div class="container auth-shell">
-        <div class="hero-card">
-          <span class="badge">Authentication</span>
-          <h1>Sign In</h1>
-          <p>
-            Draft sign-in page UI. This page currently demonstrates layout only and does not create
-            real accounts or process real logins.
-          </p>
+    <section class="auth-wrap">
+      <div class="auth-card">
+        <h1 class="auth-title">Register</h1>
+        <p class="auth-subtitle">Create an account to continue into EncryptEd.</p>
 
-          <section class="card" aria-labelledby="signin-title">
-            <h2 id="signin-title" class="aside-title">Account access</h2>
+        <form class="form" action="connect.php" method="post">
+          <div class="form-input">
+            <input type="text" name="firstname" placeholder="First Name" required>
+          </div>
 
-            <form class="form" action="#" method="post">
-              <div class="field">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" required>
-              </div>
+          <div class="form-input">
+           <input type="text" name="username" placeholder="Username" required>
+          </div>
 
-              <div class="field">
-                <label for="password">Password</label>
-                <input id="password" name="password" type="password" autocomplete="current-password" required>
-              </div>
+          <div class="form-input">
+            <input type="password" name="password" placeholder="Password" required>
+          </div>
 
-              <div class="field">
-                <label for="remember">
-                  <input id="remember" name="remember" type="checkbox" value="yes">
-                  Remember me
-                </label>
-              </div>
+          <label class="checkbox-row" for="remember">
+            <input id="remember" type="checkbox" name="remember" value="yes">
+            Remember me
+          </label>
 
-              <button class="btn primary" type="submit">Sign In</button>
+          <button class="btn primary" type="submit">Sign Up</button>
 
-              <p class="aside-note" style="margin-top:10px;">
-                Forgot your password? (UI placeholder)
-              </p>
-            </form>
-          </section>
-
-          <hr class="hr">
-
-          <p class="aside-note">
-            To make this page support real accounts, connect it to an authentication service and database.
-          </p>
-        </div>
+          <p class="helper">Already have an account? This is a UI-only placeholder page.</p>
+        </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p class="footer-text">EncryptEd draft UI • Sign In</p>
+      <p>EncryptEd draft UI • Sign In</p>
     </div>
   </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuToggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector("#primary-nav");
-
-      if (menuToggle && nav) {
-        menuToggle.addEventListener("click", function () {
-          const isOpen = nav.classList.toggle("nav-open");
-          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-          menuToggle.textContent = isOpen ? "✕" : "☰";
-        });
-      }
-    });
-  </script>
 </body>
 </html>

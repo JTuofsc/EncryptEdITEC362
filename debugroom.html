@@ -5,9 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Debug Room | EncryptEd</title>
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -15,19 +14,10 @@
     <div class="container header-inner">
       <a class="brand" href="index.html">
         <span class="brand-badge" aria-hidden="true">E</span>
-        <span>EncryptEd</span>
+        <span class="brand-text">EncryptEd</span>
       </a>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="primary-nav"
-        aria-label="Open menu">
-        ☰
-      </button>
-
-      <nav class="nav" id="primary-nav" aria-label="Primary navigation">
+      <nav class="nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="welcome-encrypted.html">Welcome</a>
         <a href="inside-firewall.html">Inside the Firewall</a>
@@ -39,126 +29,161 @@
   </header>
 
   <main id="main">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-card">
-          <span class="badge">Community • Draft</span>
-          <h1>Debug Room</h1>
-          <p>
-            Ask questions, solve problems, and learn together. This is a draft forum layout for
-            EncryptEd and currently shows sample categories and example posts.
-          </p>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-card">
+        <span class="badge">Community</span>
+        <h1>Debug Room</h1>
+        <p>
+          Ask questions, solve problems, and share ideas with others interested in
+          cybersecurity, coding, and general IT topics.
+        </p>
 
-          <div class="hero-actions">
-            <a class="btn primary" href="sign-in.html">Start a Discussion</a>
-            <a class="btn" href="sign-in.html">Login to Post</a>
-          </div>
-        </div>
-
-        <aside class="hero-card" aria-label="Quick tips">
-          <h2 class="aside-title">How it works</h2>
-          <ul class="clean-list">
-            <li>Choose a topic category.</li>
-            <li>Browse recent discussions.</li>
-            <li>Sign in to create a post or reply.</li>
-          </ul>
-          <hr class="hr">
-          <p class="aside-note">
-            Draft version: posts below are examples used to demonstrate the forum layout.
-          </p>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-title">
-          <h2>Categories</h2>
-          <p>Choose a topic to browse questions.</p>
-        </div>
-
-        <div class="grid cols-3">
-          <a class="card cat cat--cybersecurity" href="sign-in.html">
-            <span class="cat__label">Cybersecurity</span>
-          </a>
-
-          <a class="card cat cat--coding" href="sign-in.html">
-            <span class="cat__label">Coding</span>
-          </a>
-
-          <a class="card cat cat--plain" href="sign-in.html">
-            <span class="cat__label">General IT</span>
-          </a>
+        <div class="hero-actions">
+          <a class="btn primary" href="#">Start a Discussion</a>
+          <a class="btn" href="sign-in.html">Login to Post</a>
         </div>
       </div>
-    </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-title">
-          <h2>Recent Posts</h2>
-          <p>Sample questions from the community draft.</p>
-        </div>
+      <aside class="hero-card" aria-label="Quick tips">
+        <h2 style="margin:0 0 10px; font-size:18px;">How it works</h2>
+        <ul class="clean-list">
+          <li>Choose the category that best matches your question.</li>
+          <li>Look through recent posts before creating a new one.</li>
+          <li>Include screenshots or code snippets when asking for help.</li>
+        </ul>
+        <hr class="hr">
+        <p style="margin:0; color:var(--muted); font-size:14px;">
+          This page is designed to make it easier for users to learn, troubleshoot,
+          and interact with the site.
+        </p>
+      </aside>
+    </div>
+  </section>
 
-        <div class="grid post-grid">
-          <article class="card post">
-            <h3>How do firewalls decide what traffic to block?</h3>
-            <p class="post__meta">Alex M. • March 20, 2026</p>
-          </article>
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Categories</h2>
+        <p>Choose a topic to browse questions and discussions.</p>
+      </div>
 
-          <article class="card post">
-            <h3>Why does my HTML page look different on mobile?</h3>
-            <p class="post__meta">Jordan T. • March 19, 2026</p>
-          </article>
+      <p class="section-intro">
+        These categories help users quickly find the area that best matches their
+        interests or technical problems.
+      </p>
 
-          <article class="card post">
-            <h3>What’s the difference between authentication and authorization?</h3>
-            <p class="post__meta">Sam R. • March 18, 2026</p>
-          </article>
+      <div class="grid cols-3">
+        <a class="card cat" href="#" style="background-image:url('images/cybersecurity.jpg');">
+          <span class="cat__label">Cybersecurity</span>
+        </a>
 
-          <article class="card post">
-            <h3>How do I center a div with CSS?</h3>
-            <p class="post__meta">Taylor P. • March 17, 2026</p>
-          </article>
+        <a class="card cat" href="#" style="background-image:url('images/coding.jpg');">
+          <span class="cat__label">Coding</span>
+        </a>
 
-          <article class="card post">
-            <h3>What makes a password strong enough?</h3>
-            <p class="post__meta">Chris L. • March 16, 2026</p>
-          </article>
+        <a class="card cat" href="#" style="background-image:url('images/genit.jpg');">
+          <span class="cat__label">General IT</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-          <article class="card post">
-            <h3>When should I use Python instead of JavaScript?</h3>
-            <p class="post__meta">Morgan K. • March 15, 2026</p>
-          </article>
-        </div>
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Recent Posts</h2>
+        <p>Latest questions from the community.</p>
+      </div>
 
-        <div class="center-actions">
-          <a class="btn primary" href="sign-in.html">Login to Post</a>
+      <div class="grid">
+  <a class="card post" href="post-css-path.html">
+    <h3>How can I tell if my CSS file path is wrong?</h3>
+    <p class="post__meta">Alex • April 2026</p>
+  </a>
+
+  <a class="card post" href="post-auth-vs-encryption.html">
+    <h3>What is the difference between authentication and encryption?</h3>
+    <p class="post__meta">Jamie • April 2026</p>
+  </a>
+
+  <a class="card post" href="post-image-loading.html">
+    <h3>Why is my image not loading in HTML?</h3>
+    <p class="post__meta">Taylor • April 2026</p>
+  </a>
+
+  <a class="card post" href="post-cyber-habits.html">
+    <h3>What are some beginner-friendly cybersecurity habits?</h3>
+    <p class="post__meta">Morgan • April 2026</p>
+  </a>
+</div>
+
+      <div class="center-actions">
+        <a class="btn primary" href="sign-in.html">Login to Post</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Debug Tip Generator</h2>
+        <p>Interactive JavaScript feature for quick troubleshooting help.</p>
+      </div>
+
+      <div class="card tip-box">
+        <h3 id="tipTitle" class="tip-title">Need a tip?</h3>
+        <p id="tipText" class="tip-text">
+          Click the button below to generate a random debugging tip.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn primary" type="button" onclick="generateTip()">Generate Tip</button>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+</main>
+
+<script>
+  // Name: Japheth Troche
+  // Date: April 19, 2026
+
+  const debugTips = [
+    {
+      title: "Check file paths",
+      text: "If CSS, images, or links do not load, make sure the file names and folder paths match exactly."
+    },
+    {
+      title: "Validate your HTML",
+      text: "A missing closing tag can affect the layout of an entire page."
+    },
+    {
+      title: "Use browser tools",
+      text: "Inspect Element and the Console can help you find styling and script errors quickly."
+    },
+    {
+      title: "Test one change at a time",
+      text: "Making one change at a time makes it easier to find what caused a problem."
+    },
+    {
+      title: "Keep names clear",
+      text: "Using clear class names and file names makes your code easier to understand and debug."
+    }
+  ];
+
+  function generateTip() {
+    const randomIndex = Math.floor(Math.random() * debugTips.length);
+    document.getElementById("tipTitle").textContent = debugTips[randomIndex].title;
+    document.getElementById("tipText").textContent = debugTips[randomIndex].text;
+  }
+</script>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p class="footer-text">EncryptEd draft UI • Debug Room</p>
+      <p>EncryptEd draft UI • Debug Room</p>
     </div>
   </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuToggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector("#primary-nav");
-
-      if (menuToggle && nav) {
-        menuToggle.addEventListener("click", function () {
-          const isOpen = nav.classList.toggle("nav-open");
-          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-          menuToggle.textContent = isOpen ? "✕" : "☰";
-        });
-      }
-    });
-  </script>
 </body>
 </html>

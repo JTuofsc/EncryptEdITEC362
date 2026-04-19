@@ -5,9 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EncryptEd | Inside the Firewall</title>
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -15,19 +14,10 @@
     <div class="container header-inner">
       <a class="brand" href="index.html">
         <span class="brand-badge" aria-hidden="true">E</span>
-        <span>EncryptEd</span>
+        <span class="brand-text">EncryptEd</span>
       </a>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="primary-nav"
-        aria-label="Open menu">
-        ☰
-      </button>
-
-      <nav class="nav" id="primary-nav" aria-label="Primary navigation">
+      <nav class="nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="welcome-encrypted.html">Welcome</a>
         <a href="inside-firewall.html" aria-current="page">Inside the Firewall</a>
@@ -45,23 +35,26 @@
           <span class="badge">Defense • Networks</span>
           <h1>Inside the Firewall</h1>
           <p>
-            A firewall is a gatekeeper. It checks network traffic and applies rules to allow, deny,
-            or log connections based on security policy.
+            A firewall acts as a digital gatekeeper. It reviews network traffic
+            and applies security rules to allow, deny, or log access.
           </p>
 
           <div class="hero-actions">
             <a class="btn primary" href="sign-in.html">Secure Sign In</a>
-            <a class="btn" href="#lockdown">Emergency Lockdown</a>
+            <a class="btn" href="#lockdown"
+               style="border-color:rgba(255,123,147,.45); background:rgba(255,123,147,.10);">
+              Emergency Lockdown
+            </a>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Key terms">
-          <h2 class="aside-title">Key Terms</h2>
+        <aside class="hero-card" aria-label="Firewall terms">
+          <span class="badge">Key Terms</span>
           <ul class="clean-list">
-            <li><strong>Inbound</strong>: traffic entering your network.</li>
-            <li><strong>Outbound</strong>: traffic leaving your network.</li>
-            <li><strong>Ports</strong>: service “doors” (80/443 web, 22 SSH).</li>
-            <li><strong>Logging</strong>: recorded events for audit/response.</li>
+            <li><strong>Inbound:</strong> traffic entering your network.</li>
+            <li><strong>Outbound:</strong> traffic leaving your network.</li>
+            <li><strong>Ports:</strong> service access points such as 80, 443, and 22.</li>
+            <li><strong>Logging:</strong> saving events for security review.</li>
           </ul>
         </aside>
       </div>
@@ -70,24 +63,24 @@
     <section class="section">
       <div class="container">
         <div class="section-title">
-          <h2>Rule types</h2>
-          <p>Specific rules first, broad rules last.</p>
+          <h2>Rule Types</h2>
+          <p>Specific rules should come before broad ones.</p>
         </div>
 
         <div class="grid cols-3">
           <article class="card">
             <h3>Allow</h3>
-            <p>Permit required traffic (example: HTTPS on port 443).</p>
+            <p>Permits safe or required traffic such as HTTPS on port 443.</p>
           </article>
 
           <article class="card">
             <h3>Deny</h3>
-            <p>Block risky or unnecessary traffic.</p>
+            <p>Blocks suspicious or unnecessary traffic to reduce risk.</p>
           </article>
 
           <article class="card">
             <h3>Log</h3>
-            <p>Record events for visibility and investigation.</p>
+            <p>Records connection attempts for audits and investigations.</p>
           </article>
         </div>
 
@@ -95,20 +88,20 @@
 
         <div class="grid cols-2">
           <article class="card">
-            <h3>Mini checklist</h3>
+            <h3>Mini Checklist</h3>
             <ul class="clean-list">
-              <li>Default deny (least privilege).</li>
-              <li>Only open the ports you need.</li>
-              <li>Log sign-ins and admin actions.</li>
-              <li>Review rules regularly.</li>
+              <li>Use least privilege by default.</li>
+              <li>Only open the ports you truly need.</li>
+              <li>Log admin actions and sign-in attempts.</li>
+              <li>Review and revise rules regularly.</li>
             </ul>
           </article>
 
           <article class="card" id="lockdown">
-            <h3>Lockdown mode</h3>
+            <h3>Lockdown Mode</h3>
             <p>
-              During an incident, temporarily restrict inbound traffic to essentials only, then
-              restore services safely.
+              During an incident, restrict traffic to essential services only,
+              then restore access carefully once the issue is contained.
             </p>
           </article>
         </div>
@@ -118,24 +111,8 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p class="footer-text">EncryptEd draft UI • Inside the Firewall</p>
+      <p>EncryptEd draft UI • Inside the Firewall</p>
     </div>
   </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuToggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector("#primary-nav");
-
-      if (menuToggle && nav) {
-        menuToggle.addEventListener("click", function () {
-          const isOpen = nav.classList.toggle("nav-open");
-          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-          menuToggle.textContent = isOpen ? "✕" : "☰";
-        });
-      }
-    });
-  </script>
 </body>
 </html>
