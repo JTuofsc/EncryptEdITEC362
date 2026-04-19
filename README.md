@@ -7,7 +7,7 @@ Sign-in
 
 Created by JT:
 Hello, World!
-Debug Room
+Debug Room (post-~~.html) pages are mock-ups for DebugRoom.html
 
 Created in collaboration:
 Home
