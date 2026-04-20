@@ -1,12 +1,18 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Author: Andrew Jackson Darragh -->
+  <!-- Author: Andrew Jackson Darragh and Japheth Troche -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EncryptEd | Sign In</title>
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .auth-shell{ max-width: 760px; margin: 0 auto; }
+    .form-message{ margin-top: 12px; font-weight: 600; }
+  </style>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -29,41 +35,107 @@
   </header>
 
   <main id="main">
-    <section class="auth-wrap">
-      <div class="auth-card">
-        <h1 class="auth-title">Register</h1>
-        <p class="auth-subtitle">Create an account to continue into EncryptEd.</p>
+    <section class="hero">
+      <div class="container auth-shell">
+        <div class="hero-card">
+          <span class="badge">Authentication</span>
+          <h1>Sign Up</h1>
+          <p>
+            Draft sign-up page UI with basic JavaScript validation.
+          </p>
 
-        <form class="form" action="connect.php" method="post">
-          <div class="form-input">
-            <input type="text" name="firstname" placeholder="First Name" required>
-          </div>
+          <section class="card" aria-labelledby="signin-title">
+            <h2 id="signin-title" style="margin:0 0 10px; font-size:18px;">Account access</h2>
 
-          <div class="form-input">
-           <input type="text" name="username" placeholder="Username" required>
-          </div>
+            <form id="signInForm" action="connect.php" method="post">
+              <div class="field">
+                <label for="firstname">First Name</label>
+                <input id="firstname" name="firstname" type="text" required>
+              </div>
 
-          <div class="form-input">
-            <input type="password" name="password" placeholder="Password" required>
-          </div>
+              <div class="field">
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text" required>
+              </div>
 
-          <label class="checkbox-row" for="remember">
-            <input id="remember" type="checkbox" name="remember" value="yes">
-            Remember me
-          </label>
+              <div class="field">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" required>
+              </div>
 
-          <button class="btn primary" type="submit">Sign Up</button>
+              <div class="field">
+                <label for="remember">
+                  <input id="remember" name="remember" type="checkbox" value="yes">
+                  Remember me
+                </label>
+              </div>
 
-          <p class="helper">Already have an account? This is a UI-only placeholder page.</p>
-        </form>
+              <button class="btn primary" type="submit">Sign Up</button>
+
+              <p id="formMessage" class="form-message" aria-live="polite"></p>
+
+              <p class="helper" style="margin:10px 0 0;">
+                This is a demo form connected to PHP and MySQL.
+              </p>
+            </form>
+          </section>
+
+          <hr class="hr">
+
+          <p class="helper" style="margin:0;">
+            External CSS: styles.css • Internal CSS: welcome page • Inline CSS: firewall page button
+          </p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>EncryptEd draft UI • Sign In</p>
+      <p style="margin:0;">EncryptEd draft UI • Sign In</p>
     </div>
   </footer>
+
+  <script>
+    const form = document.getElementById("signInForm");
+    const firstNameInput = document.getElementById("firstname");
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+    const formMessage = document.getElementById("formMessage");
+
+    form.addEventListener("submit", function(event) {
+      const firstNameValue = firstNameInput.value.trim();
+      const usernameValue = usernameInput.value.trim();
+      const passwordValue = passwordInput.value.trim();
+
+      if (firstNameValue === "") {
+        event.preventDefault();
+        formMessage.textContent = "Please enter your first name.";
+        formMessage.style.color = "red";
+        return;
+      }
+
+      if (usernameValue === "") {
+        event.preventDefault();
+        formMessage.textContent = "Please enter a username.";
+        formMessage.style.color = "red";
+        return;
+      }
+
+      if (passwordValue === "") {
+        event.preventDefault();
+        formMessage.textContent = "Please enter your password.";
+        formMessage.style.color = "red";
+        return;
+      }
+
+      if (passwordValue.length < 6) {
+        event.preventDefault();
+        formMessage.textContent = "Password must be at least 6 characters long.";
+        formMessage.style.color = "red";
+        return;
+      }
+    });
+  </script>
 </body>
 </html>

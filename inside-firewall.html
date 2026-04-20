@@ -7,6 +7,7 @@
   <title>EncryptEd | Inside the Firewall</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -35,26 +36,27 @@
           <span class="badge">Defense • Networks</span>
           <h1>Inside the Firewall</h1>
           <p>
-            A firewall acts as a digital gatekeeper. It reviews network traffic
-            and applies security rules to allow, deny, or log access.
+            A firewall is a gatekeeper. It checks network traffic and applies rules to allow, deny,
+            or log connections based on security policy.
           </p>
 
           <div class="hero-actions">
             <a class="btn primary" href="sign-in.html">Secure Sign In</a>
+
             <a class="btn" href="#lockdown"
-               style="border-color:rgba(255,123,147,.45); background:rgba(255,123,147,.10);">
+               style="border-color: rgba(251,113,133,.55); background: rgba(251,113,133,.12);">
               Emergency Lockdown
             </a>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Firewall terms">
-          <span class="badge">Key Terms</span>
+        <aside class="hero-card" aria-label="Key terms">
+          <h2 style="margin:0 0 10px; font-size:18px;">Key Terms</h2>
           <ul class="clean-list">
-            <li><strong>Inbound:</strong> traffic entering your network.</li>
-            <li><strong>Outbound:</strong> traffic leaving your network.</li>
-            <li><strong>Ports:</strong> service access points such as 80, 443, and 22.</li>
-            <li><strong>Logging:</strong> saving events for security review.</li>
+            <li><strong>Inbound</strong>: traffic entering your network.</li>
+            <li><strong>Outbound</strong>: traffic leaving your network.</li>
+            <li><strong>Ports</strong>: service “doors” (80/443 web, 22 SSH).</li>
+            <li><strong>Logging</strong>: recorded events for audit and response.</li>
           </ul>
         </aside>
       </div>
@@ -63,24 +65,24 @@
     <section class="section">
       <div class="container">
         <div class="section-title">
-          <h2>Rule Types</h2>
-          <p>Specific rules should come before broad ones.</p>
+          <h2>Rule types</h2>
+          <p>Specific rules first, broad rules last.</p>
         </div>
 
         <div class="grid cols-3">
           <article class="card">
             <h3>Allow</h3>
-            <p>Permits safe or required traffic such as HTTPS on port 443.</p>
+            <p>Permit required traffic, such as HTTPS on port 443.</p>
           </article>
 
           <article class="card">
             <h3>Deny</h3>
-            <p>Blocks suspicious or unnecessary traffic to reduce risk.</p>
+            <p>Block risky or unnecessary traffic.</p>
           </article>
 
           <article class="card">
             <h3>Log</h3>
-            <p>Records connection attempts for audits and investigations.</p>
+            <p>Record events for visibility and investigation.</p>
           </article>
         </div>
 
@@ -88,20 +90,20 @@
 
         <div class="grid cols-2">
           <article class="card">
-            <h3>Mini Checklist</h3>
+            <h3>Mini checklist</h3>
             <ul class="clean-list">
-              <li>Use least privilege by default.</li>
-              <li>Only open the ports you truly need.</li>
-              <li>Log admin actions and sign-in attempts.</li>
-              <li>Review and revise rules regularly.</li>
+              <li>Default deny (least privilege).</li>
+              <li>Only open the ports you need.</li>
+              <li>Log sign-ins and admin actions.</li>
+              <li>Review rules regularly.</li>
             </ul>
           </article>
 
           <article class="card" id="lockdown">
-            <h3>Lockdown Mode</h3>
+            <h3>Lockdown mode</h3>
             <p>
-              During an incident, restrict traffic to essential services only,
-              then restore access carefully once the issue is contained.
+              During an incident, temporarily restrict inbound traffic to essentials only, then
+              restore services safely.
             </p>
           </article>
         </div>
@@ -111,7 +113,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>EncryptEd draft UI • Inside the Firewall</p>
+      <p style="margin:0;">EncryptEd draft UI • Inside the Firewall</p>
     </div>
   </footer>
 </body>
