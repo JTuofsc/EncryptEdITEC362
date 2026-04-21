@@ -17,12 +17,17 @@
         <span class="brand-text">EncryptEd</span>
       </a>
 
-      <nav class="nav" aria-label="Primary navigation">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="welcome-encrypted.html">Welcome</a>
         <a href="inside-firewall.html">Inside the Firewall</a>
         <a href="helloworld.html" aria-current="page">Hello, World!</a>
         <a href="debugroom.html">Debug Room</a>
+        <a href="quiz.html">Quiz</a>
         <a href="sign-in.html" class="nav-cta">Sign In</a>
       </nav>
     </div>
@@ -37,6 +42,11 @@
             Explore beginner-friendly programming examples across common languages
             used in web development, scripting, software engineering, and databases.
           </p>
+        </div>
+
+        <div class="hero-actions" style="margin-bottom:18px;">
+          <a class="btn primary" href="quiz.html">Take the Quiz</a>
+          <a class="btn" href="inside-firewall.html">Review Firewall Basics</a>
         </div>
 
         <div class="grid cols-2">
@@ -112,5 +122,24 @@ ORDER BY last_name;</code></pre>
       <p>EncryptEd draft UI • Hello, World!</p>
     </div>
   </footer>
+<script>
+  const navToggle = document.querySelector(".nav-toggle");
+  const nav = document.getElementById("primary-nav");
+
+  if (navToggle && nav) {
+    navToggle.addEventListener("click", function () {
+      const expanded = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-expanded", String(!expanded));
+      nav.classList.toggle("is-open");
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 900) {
+        nav.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+</script>
 </body>
 </html>

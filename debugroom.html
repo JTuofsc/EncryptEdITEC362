@@ -17,12 +17,17 @@
         <span class="brand-text">EncryptEd</span>
       </a>
 
-      <nav class="nav" aria-label="Primary navigation">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="welcome-encrypted.html">Welcome</a>
         <a href="inside-firewall.html">Inside the Firewall</a>
         <a href="helloworld.html">Hello, World!</a>
         <a href="debugroom.html" aria-current="page">Debug Room</a>
+        <a href="quiz.html">Quiz</a>
         <a href="sign-in.html" class="nav-cta">Sign In</a>
       </nav>
     </div>
@@ -178,12 +183,30 @@
     document.getElementById("tipText").textContent = debugTips[randomIndex].text;
   }
 </script>
-  </main>
 
   <footer class="site-footer">
     <div class="container">
       <p>EncryptEd draft UI • Debug Room</p>
     </div>
   </footer>
+<script>
+  const navToggle = document.querySelector(".nav-toggle");
+  const nav = document.getElementById("primary-nav");
+
+  if (navToggle && nav) {
+    navToggle.addEventListener("click", function () {
+      const expanded = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-expanded", String(!expanded));
+      nav.classList.toggle("is-open");
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 900) {
+        nav.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+</script>
 </body>
 </html>

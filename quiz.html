@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EncryptEd | Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true">E</span>
+        <span class="brand-text">EncryptEd</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="welcome-encrypted.html">Welcome</a>
+        <a href="inside-firewall.html">Inside the Firewall</a>
+        <a href="helloworld.html">Hello, World!</a>
+        <a href="debugroom.html">Debug Room</a>
+        <a href="quiz.html" aria-current="page">Quiz</a>
+        <a href="sign-in.html" class="nav-cta">Sign In</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container quiz-shell">
+        <div class="hero-card">
+          <span class="badge">Knowledge Check</span>
+          <h1>EncryptEd Quiz</h1>
+          <p>
+            Test what you learned from <strong>Hello, World!</strong> and <strong>Inside the Firewall</strong>.
+            This quiz has 10 multiple-choice questions and gives your score instantly.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="helloworld.html">Review Hello, World!</a>
+            <a class="btn" href="inside-firewall.html">Review Firewall Page</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container quiz-shell">
+        <form id="quizForm" class="quiz-form">
+        </form>
+
+        <div class="quiz-actions">
+          <button class="btn primary" type="submit" form="quizForm">Submit Quiz</button>
+          <button class="btn" type="button" id="resetQuiz">Reset Quiz</button>
+        </div>
+
+        <section id="quizResults" class="quiz-results" aria-live="polite">
+          <p class="score-line" id="scoreLine"></p>
+          <p id="scoreMessage"></p>
+          <div id="resultsList" class="results-list"></div>
+          <p class="quiz-note">Tip: review the Hello, World! and Inside the Firewall pages, then try again.</p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p style="margin:0;">EncryptEd draft UI • Quiz</p>
+    </div>
+  </footer>
+
+<script>
+  const navToggle = document.querySelector(".nav-toggle");
+  const nav = document.getElementById("primary-nav");
+
+  if (navToggle && nav) {
+    navToggle.addEventListener("click", function () {
+      const expanded = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-expanded", String(!expanded));
+      nav.classList.toggle("is-open");
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 900) {
+        nav.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  const questions = [
+    {
+      question: "What is a firewall compared to on the Inside the Firewall page?",
+      options: ["A backup drive", "A gatekeeper", "A coding language", "A password manager"],
+      answer: 1,
+      explanation: "The page explains that a firewall is like a gatekeeper that checks network traffic and applies rules."
+    },
+    {
+      question: "Which rule type permits required traffic such as HTTPS on port 443?",
+      options: ["Deny", "Log", "Allow", "Blocklist"],
+      answer: 2,
+      explanation: "Allow rules permit required traffic."
+    },
+    {
+      question: "Inbound traffic is traffic that is...",
+      options: ["entering your network", "leaving your network", "stored in a database", "moving between browser tabs"],
+      answer: 0,
+      explanation: "Inbound traffic enters the network."
+    },
+    {
+      question: "What is the purpose of logging in firewall rules?",
+      options: ["To speed up games", "To record events for audit and response", "To create new passwords", "To run Java programs"],
+      answer: 1,
+      explanation: "The page says logging records events for visibility, audit, and response."
+    },
+    {
+      question: "According to the mini checklist, what is the safest default approach?",
+      options: ["Default allow", "Least privilege / default deny", "Open every port", "Turn logging off"],
+      answer: 1,
+      explanation: "The checklist says default deny and least privilege."
+    },
+    {
+      question: "Which language is listed as commonly used for automation, scripting, web apps, and data science?",
+      options: ["SQL", "Java", "Python", "HTML"],
+      answer: 2,
+      explanation: "Those common uses are listed under Python."
+    },
+    {
+      question: "Which language is associated with front-end, back-end, and interactivity?",
+      options: ["JavaScript", "C++", "SQL", "HTML"],
+      answer: 0,
+      explanation: "That description appears under JavaScript."
+    },
+    {
+      question: "Which option is used for querying and managing databases?",
+      options: ["HTML", "Java", "SQL", "Python"],
+      answer: 2,
+      explanation: "SQL is presented as the language for querying and managing databases."
+    },
+    {
+      question: "What is HTML mainly used for according to the page?",
+      options: ["Game development", "Page structure and content", "System security rules", "Data science only"],
+      answer: 1,
+      explanation: "The Hello, World! page lists HTML for page structure and content."
+    },
+    {
+      question: "Which language is described as useful for games, systems programming, and performance-heavy apps?",
+      options: ["C++", "JavaScript", "SQL", "HTML"],
+      answer: 0,
+      explanation: "That description appears under C++."
+    }
+  ];
+
+  const quizForm = document.getElementById("quizForm");
+  const results = document.getElementById("quizResults");
+  const scoreLine = document.getElementById("scoreLine");
+  const scoreMessage = document.getElementById("scoreMessage");
+  const resultsList = document.getElementById("resultsList");
+  const resetQuiz = document.getElementById("resetQuiz");
+
+  function renderQuiz() {
+    quizForm.innerHTML = questions.map((item, index) => `
+      <section class="question-card">
+        <h3>${index + 1}. ${item.question}</h3>
+        <div class="quiz-options">
+          ${item.options.map((option, optionIndex) => `
+            <label class="quiz-option">
+              <input type="radio" name="q${index}" value="${optionIndex}">
+              <span>${option}</span>
+            </label>
+          `).join("")}
+        </div>
+      </section>
+    `).join("");
+  }
+
+  function getMessage(score) {
+    if (score === 10) return "Perfect score. You clearly understood both lesson pages.";
+    if (score >= 8) return "Nice work. You have a strong grasp of the material.";
+    if (score >= 6) return "Solid start. Review a few topics and try again for a higher score.";
+    return "Good effort. Review the lesson pages and take another shot.";
+  }
+
+  quizForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    let score = 0;
+    const review = [];
+
+    questions.forEach((item, index) => {
+      const selected = quizForm.querySelector(`input[name="q${index}"]:checked`);
+      const selectedValue = selected ? Number(selected.value) : null;
+      const isCorrect = selectedValue === item.answer;
+
+      if (isCorrect) score += 1;
+
+      review.push({
+        question: item.question,
+        correctAnswer: item.options[item.answer],
+        selectedAnswer: selectedValue !== null ? item.options[selectedValue] : "No answer selected",
+        explanation: item.explanation,
+        isCorrect
+      });
+    });
+
+    scoreLine.textContent = `Your score: ${score} / ${questions.length}`;
+    scoreMessage.textContent = getMessage(score);
+    resultsList.innerHTML = review.map(item => `
+      <article class="result-item ${item.isCorrect ? "correct" : "incorrect"}">
+        <strong>${item.isCorrect ? "Correct" : "Needs review"}: ${item.question}</strong>
+        <p><strong>Your answer:</strong> ${item.selectedAnswer}</p>
+        <p><strong>Correct answer:</strong> ${item.correctAnswer}</p>
+        <p>${item.explanation}</p>
+      </article>
+    `).join("");
+
+    results.classList.add("is-visible");
+    results.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  resetQuiz.addEventListener("click", function () {
+    quizForm.reset();
+    results.classList.remove("is-visible");
+    scoreLine.textContent = "";
+    scoreMessage.textContent = "";
+    resultsList.innerHTML = "";
+  });
+
+  renderQuiz();
+</script>
+</body>
+</html>
